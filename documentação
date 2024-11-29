@@ -1,0 +1,76 @@
+### **Documento: Processo de Desenvolvimento do Projeto de Quiz e o Uso do Git**  
+
+---
+
+#### **1. Introdução ao Projeto**  
+O projeto consiste em um **quiz interativo com interface gráfica**, inicialmente projetado para rodar em Python utilizando a biblioteca **Tkinter**. Seu propósito é fornecer uma experiência de aprendizado divertida e personalizável. A fase inicial estabeleceu as funcionalidades básicas, enquanto futuras atualizações contemplam aprimoramentos visuais e novas funções.  
+
+---
+
+#### **2. Etapas do Desenvolvimento**  
+
+1. **Planejamento e Escopo:**  
+   - Definição dos objetivos principais: criar um quiz funcional e amigável.  
+   - Identificação das funcionalidades iniciais, como navegação entre perguntas, verificação de respostas e exibição de resultados.  
+
+2. **Desenvolvimento Inicial:**  
+   - Estruturação do código para suportar perguntas dinâmicas com opções e respostas.  
+   - Implementação de uma interface gráfica básica com **Tkinter**.  
+   - Testes iniciais para verificar a lógica do programa e a interação com a interface gráfica.  
+
+3. **Validação e Correções:**  
+   - Validação de entrada do usuário para garantir respostas válidas.  
+   - Ajustes na interface gráfica para melhorar a experiência do usuário.  
+
+4. **Integração de Controle de Versão com Git:**  
+   - Configuração de um repositório Git para acompanhar as alterações no código e na interface gráfica.  
+   - Versionamento incremental para registrar marcos importantes no desenvolvimento.  
+
+---
+
+#### **3. O Papel do Git no Projeto**  
+
+O Git tem sido uma ferramenta fundamental para o gerenciamento eficiente do código e a organização do trabalho. A seguir, destacam-se os benefícios e como ele foi utilizado:
+
+1. **Controle de Versão:**  
+   - Permitiu o registro de cada modificação no código, facilitando a rastreabilidade das mudanças realizadas.  
+   - Comandos básicos como `git add`, `git commit` e `git push` foram usados para gerenciar as versões no repositório remoto.  
+
+2. **Histórico de Desenvolvimento:**  
+   - Através do comando `git log`, foi possível revisar as alterações feitas ao longo do tempo, garantindo a documentação do progresso.  
+   - Criação de mensagens claras nos commits para detalhar as mudanças realizadas, como:  
+     - *"Adicionada validação de respostas do quiz"*  
+     - *"Implementada interface gráfica inicial"*  
+
+3. **Colaboração e Escalabilidade:**  
+   - O uso do Git facilita futuras colaborações, permitindo que outros desenvolvedores contribuam ao projeto sem conflitos de código.  
+   - Com branches (`git branch` e `git checkout`), será possível trabalhar em novas funcionalidades separadamente e integrá-las apenas quando estiverem estáveis.  
+
+4. **Reversão de Erros:**  
+   - Em caso de erros ou implementações que não atendam ao objetivo, o Git permite reverter para versões anteriores com segurança, utilizando comandos como `git revert` ou `git reset`.  
+
+---
+
+#### **4. Como o Git Auxiliará no Futuro do Projeto**  
+
+À medida que o projeto evoluir, o Git continuará desempenhando um papel crucial em:  
+
+1. **Implementação de Novas Funcionalidades:**  
+   - Criação de branches dedicadas para novos recursos, como:  
+     - *Branch `timer-feature`* para adicionar um cronômetro.  
+     - *Branch `design-update`* para melhorar a interface gráfica.  
+
+2. **Integração Contínua:**  
+   - Uso de ferramentas como GitHub ou GitLab para automação de testes e integração contínua (CI/CD).  
+
+3. **Colaboração em Equipe:**  
+   - Permitir que múltiplos desenvolvedores trabalhem simultaneamente em diferentes partes do projeto, gerenciando conflitos de código de forma eficiente.  
+
+4. **Documentação e Transparência:**  
+   - Manutenção de um histórico bem documentado das mudanças, auxiliando novos membros da equipe ou na apresentação do progresso do projeto a stakeholders.  
+
+---
+
+#### **5. Conclusão**  
+
+O Git tem sido e continuará sendo essencial para a organização, segurança e eficiência do desenvolvimento do projeto. Com ele, o time pode trabalhar de forma colaborativa e estruturada, garantindo a evolução contínua do quiz interativo. Conforme as funcionalidades se expandirem e a complexidade aumentar, o uso estratégico do Git permitirá gerenciar mudanças e inovações com facilidade.  
