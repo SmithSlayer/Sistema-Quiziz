@@ -1,5 +1,9 @@
-import tkinter as tk
+import customtkinter as ctk
 from tkinter import messagebox
+
+# Configuração inicial do CustomTkinter
+ctk.set_appearance_mode("System")  # Alterna entre "Light", "Dark" ou "System"
+ctk.set_default_color_theme("blue")  # Tema de cores: "blue", "green", "dark-blue"
 
 # Banco de perguntas
 perguntas = [
@@ -20,7 +24,7 @@ perguntas = [
     }
 ]
 
-# Variáveis globais para controlar o progresso do quiz
+# Variáveis globais
 indice_pergunta = 0
 pontuacao = 0
 
@@ -28,42 +32,40 @@ pontuacao = 0
 def verificar_resposta(selecao):
     global indice_pergunta, pontuacao
 
-    # Verifica se a resposta está correta
     if selecao == perguntas[indice_pergunta]["resposta"]:
         pontuacao += 1
 
-    # Passa para a próxima pergunta ou encerra o quiz
     indice_pergunta += 1
     if indice_pergunta < len(perguntas):
         exibir_pergunta()
     else:
-        # Mostra a pontuação final
+        # Mensagem final e encerramento
         messagebox.showinfo("Fim do Quiz", f"Você acertou {pontuacao} de {len(perguntas)} perguntas!")
-        janela.destroy()  # Fecha a janela após o quiz
+        janela.quit()
 
 # Função para exibir a pergunta atual
 def exibir_pergunta():
     pergunta_atual = perguntas[indice_pergunta]
-    pergunta_label.config(text=pergunta_atual["pergunta"])
+    pergunta_label.configure(text=pergunta_atual["pergunta"])
 
     # Atualiza os botões com as opções
     for i, opcao in enumerate(pergunta_atual["opcoes"]):
-        botoes_opcoes[i].config(text=opcao, command=lambda opcao=opcao: verificar_resposta(opcao))
+        botoes_opcoes[i].configure(text=opcao, command=lambda opcao=opcao: verificar_resposta(opcao))
 
-# Criação da janela principal
-janela = tk.Tk()
+# Configuração da janela principal
+janela = ctk.CTk()
 janela.title("Quiz Interativo")
-janela.geometry("500x300")
+janela.geometry("600x400")
 
-# Rótulo para exibir a pergunta
-pergunta_label = tk.Label(janela, text="", font=("Arial", 14), wraplength=400, justify="center")
+# Título da Pergunta
+pergunta_label = ctk.CTkLabel(janela, text="", font=("Arial", 16), wraplength=500, justify="center")
 pergunta_label.pack(pady=20)
 
-# Botões para as opções
+# Botões das Opções
 botoes_opcoes = []
-for _ in range(4):  # Cria 4 botões, um para cada opção
-    botao = tk.Button(janela, text="", font=("Arial", 12), width=30)
-    botao.pack(pady=5)
+for _ in range(4):
+    botao = ctk.CTkButton(janela, text="", font=("Arial", 14), width=400, height=40)
+    botao.pack(pady=10)
     botoes_opcoes.append(botao)
 
 # Exibe a primeira pergunta
