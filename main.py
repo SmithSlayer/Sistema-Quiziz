@@ -1,3 +1,4 @@
+# Perguntas do Quiz
 perguntas = [
     {
         "pergunta": "Qual é a capital do Brasil?",
@@ -16,6 +17,16 @@ perguntas = [
     }
 ]
 
+# Função para obter uma resposta válida
+def obter_resposta_valida():
+    while True:
+        resposta = input("Digite a letra da sua resposta (A, B, C ou D): ").strip().upper()
+        if resposta in ["A", "B", "C", "D"]:
+            return resposta  # Retorna a resposta válida
+        else:
+            print("Resposta inválida! Escolha apenas entre A, B, C ou D.")
+
+# Função principal do Quiz
 def quiz_interativo(perguntas):
     print("Bem-vindo ao Quiz!\n")
     pontuacao = 0
@@ -24,14 +35,18 @@ def quiz_interativo(perguntas):
         print(pergunta["pergunta"])
         for opcao in pergunta["opcoes"]:
             print(opcao)
-        resposta = input("Digite a letra da sua resposta: ").strip().upper()
+        
+        # Chama a função de validação para obter a resposta do usuário
+        resposta_usuario = obter_resposta_valida()
 
-        if resposta == pergunta["resposta"]:
+        # Verifica se a resposta está correta
+        if resposta_usuario == pergunta["resposta"]:
             print("Correto!\n")
             pontuacao += 1
         else:
             print(f"Errado! A resposta certa era {pergunta['resposta']}.\n")
 
+    # Exibe a pontuação final
     print(f"Você acertou {pontuacao} de {len(perguntas)} perguntas!")
     if pontuacao == len(perguntas):
         print("Parabéns! Você acertou tudo!")
@@ -40,5 +55,5 @@ def quiz_interativo(perguntas):
     else:
         print("Que tal tentar novamente?")
 
-# Chamando o Quiz
+# Executa o Quiz
 quiz_interativo(perguntas)
